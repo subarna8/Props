@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Academicone (props){
+function Academic (props){
     return (
     <div>
         <h1>Academic Info</h1>
@@ -12,4 +12,4 @@ function Academicone (props){
     );
 
 }
-export default Academicone
+export default Academic
