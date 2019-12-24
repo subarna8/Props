@@ -101,52 +101,96 @@ export default class App extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            name: 'name',
-            age: 'age',
-            address: 'address',
-            show: false
+        Profile:{
+          name: "Mahmuda Akhter",
+          age: "24",
+          address: "House#140, Road#12, Block#G, South Bonasree, Dhaka-1219",
+          school: "Scholars School",
+          college: "BISC",
+          university: "IUB"
+        }
+           
         }
     }
     handleChange = (event) => {
         console.log(event.target.value);
+        let prof= this.state.Profile
+        prof.name=  event.target.value
         this.setState({
-            name: event.target.value,
-            show : false
+           
+            Profile: prof
 
         })
     }
 
     ageChange = (event) => {
         console.log(event.target.value);
+        let prof = this.state.Profile
+        prof.age = event.target.value
         this.setState({
-            age: event.target.value,
-            show : false
+            Profile :prof
 
         })
     }
 
     addressChange = (event) => {
         console.log(event.target.value);
+        let prof = this.state.Profile
+        prof.address = event.target.value
         this.setState({
-            address: event.target.value,
-            show : false
+            Profile:prof
 
         })
     }
 
-    buttonClicked = (event) => {
-        this.setState({
-            show : true
-        })
+    schoolChange = (event) => {
+      console.log(event.target.value);
+      let prof = this.state.Profile
+      prof.school = event.target.value
+      this.setState({
+          Profile:prof
 
-    }
+      })
+  }
+
+  collegeChange = (event) => {
+    console.log(event.target.value);
+    let prof = this.state.Profile
+    prof.college = event.target.value
+    this.setState({
+        Profile:prof
+
+    })
+}
+
+universityChange = (event) => {
+  console.log(event.target.value);
+  let prof = this.state.Profile
+  prof.university = event.target.value
+  this.setState({
+      Profile:prof
+
+  })
+}
+
+    // buttonClicked = (event) => {
+    //     this.setState({
+    //         show : true
+    //     })
+
+    // }
     render()
     {
-        console.log("hi")
+       // console.log("hi")
         return(
           <div>
-              <h3> Name: <input placeholder = 'Name'  onChange  ></input></h3>
-              <CV info={Mahmuda} />
+              <h3> Name: <input placeholder = 'Name' value = {this.state.Profile.name} onChange = {this.handleChange}  ></input></h3>
+              <h3> Age: <input placeholder = 'age' value = {this.state.Profile.age} onChange = {this.ageChange}  ></input></h3>
+              <h3> Address: <input placeholder = 'address' value = {this.state.Profile.address} onChange = {this.addressChange}  ></input></h3>
+              <h3> School: <input placeholder = 'school' value = {this.state.Profile.school} onChange = {this.schoolChange}  ></input></h3>
+              <h3> College: <input placeholder = 'college' value = {this.state.Profile.college} onChange = {this.collegeChange}  ></input></h3>
+              <h3> University: <input placeholder = 'university' value = {this.state.Profile.university} onChange = {this.universityChange}  ></input></h3>
+              <CV info={this.state.Profile} />
           </div>
            
         )

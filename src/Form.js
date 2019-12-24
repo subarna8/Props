@@ -47,6 +47,7 @@ export default class Form extends React.Component{
         console.log("hi")
         return(
             <div>
+                <CV info = {Mahmuda}/>
                 <h1>Personal Info</h1>
                 <h3> Name: <input placeholder = 'Name' value = {this.state.name} onChange = {this.handleChange} ></input></h3>
                 <h3> age: <input placeholder = 'age' value = {this.state.age} onChange = {this.ageChange} ></input></h3>
